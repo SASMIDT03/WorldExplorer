@@ -25,7 +25,7 @@ export function App() {
         <div>
             <header>
                 <h1>World Explorer</h1>
-                <p>Displaying {countries.length} countries</p>
+                <p>Displaying {filteredCountries.length} countries</p>
             </header>
             <div className={"MainContainer"}>
                 <input

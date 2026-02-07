@@ -8,6 +8,9 @@
 
 body {
     background-color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
@@ -34,7 +37,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .SearchInput {
@@ -52,11 +55,13 @@ p {
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
     padding: 10px;
-
+    width: 90vw;
+    height: 90vh;
 
     overflow-y: auto;
+    scrollbar-color: var(--lightShadow) var(--light);
 }
 
 @media (max-width: 900px) {
