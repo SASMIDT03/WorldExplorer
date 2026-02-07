@@ -9,7 +9,7 @@ export function App() {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        fetch("https://restcountries.com/v3.1/all?fields=name,flags,region,population")
+        fetch("https://restcountries.com/v3.1/all?fields=name,flags")
             .then(res => res.json())
             .then((data: Country[]) => {
                 data.sort((a: Country, b: Country) => a.name.common.localeCompare(b.name.common))
@@ -42,8 +42,6 @@ export function App() {
                         <CountryCard
                             key = {country.name.common}
                             name = {country.name.common}
-                            population = {country.population}
-                            continent = {country.region}
                             flag = {country.flags.png} />
                     ))}
                 </div>
