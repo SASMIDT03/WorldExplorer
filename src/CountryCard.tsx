@@ -10,12 +10,13 @@ type CountryCardProps = {
 
 export function CountryCard({name, population, continent, flag}: CountryCardProps) {
 
+
     return (
         <div className={"CardContainer"}>
             <motion.div
                 className={"CardBackground"}
                 whileHover={{rotateY: 180}}
-                transition={{type: "spring", stiffness: 150, damping: 20}}
+                transition={{type: "spring", stiffness: 100, damping: 10}}
                 style={{ transformStyle: "preserve-3d" }}
             >
                 <div className={"CardFace Front"}>
