@@ -22,7 +22,7 @@ export function CountryCard({name, flag}: CountryCardProps) {
     }
 
     function fetchExpandedCountryData() {
-        fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,flags,region,population,capital,cioc`)
+        fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,flags,region,population,capital,cioc,currencies`)
             .then(res => res.json())
             .then(data => setCountry(data[0]))
     }
@@ -50,10 +50,15 @@ export function CountryCard({name, flag}: CountryCardProps) {
 
                 <div className={"CardFace Back"}>
                     <h3>{name}</h3>
-                    <div className="InformationPoint"><h4>Capital: </h4><p>{country?.capital}</p></div>
+                    <div className="InformationPoint"><h4>Capital: </h4><p>{country?.capital ? country.capital : "No official capital"}</p></div>
                     <div className="InformationPoint"><h4>Continent:</h4><p>{country?.region}</p></div>
                     <div className="InformationPoint"><h4>Population: </h4><p>{country?.population}</p></div>
-                    <div className="InformationPoint"><h4>IOC: </h4><p>{country?.cioc}</p></div>
+                    <div className="InformationPoint"><h4>IOC: </h4><p>{country?.cioc ? country.cioc : "No official IOC"}</p></div>
+                    <div className="InformationPoint"><h4>Currency: </h4><p>{country?.currencies && Object.values(country.currencies).length > 0
+                        ? Object.values(country.currencies)[0].name
+                        : "No official currency"
+                    }</p></div>
+
 
 
                 </div>

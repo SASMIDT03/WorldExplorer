@@ -2,11 +2,16 @@ export interface ExpandedCountry {
     name: {
         common: string;
     };
-    capital: string;
+    capital: string[];
     population: number;
     region: string;
     flags: {
         png: string;
     };
     cioc: string;
+    currencies?: {
+        [code: string]: {
+            name: string;
+        }
+    }
 }
