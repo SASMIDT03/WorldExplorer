@@ -1,0 +1,29 @@
+.CardBackground {
+    background: var(--light);
+    border-radius: var(--radius);
+    box-shadow: 0px 0px 14px -3px var(--lightShadow);
+
+    padding: 3%
+}
+
+.InformationPoint {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 0;
+}
+
+.FlagContainer {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 64%;
+    height: 150px;
+    /* border-radius: var(--radius); */
+    object-fit: contain;
+    filter: drop-shadow(0px 0px 6px var(--lightShadow));
+
+}
