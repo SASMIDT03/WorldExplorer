@@ -22,14 +22,20 @@ export function CountryCard({name, flag}: CountryCardProps) {
     }
 
     function fetchExpandedCountryData() {
-        fetch(`https://restcountries.com/v3.1/name/${name}?fields=name,flags,region,population,capital,cioc,currencies`)
+        fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true&fields=name,flags,region,population,capital,cioc,currencies`)
             .then(res => res.json())
-            .then(data => setCountry(data[0]))
+            .then(data => {
+                setCountry(data[0])
+                console.log("Data: ", data[0])
+            })
     }
 
     useEffect(() => {
         if (!country) return
-        console.log("c: ", country?.capital[0])
+        if (country.name.common.localeCompare("United States"))
+        console.log("c: ", country.capital[0])
+        console.log("p: ", country.population)
+
     }, [country]);
 
     return (
