@@ -45,10 +45,16 @@ p {
     color: var(--dark);
     border: none;
     width: 64vw;
-    height: 5vh;
+    height: 7vh;
     box-shadow: 0px 0px 14px -3px var(--lightShadow);
     border-radius: var(--radius);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.SearchInput:focus {
+    outline: none;
+    box-shadow: 0px 0px 14px -3px var(--dark);
 }
 
 .CountryGrid {
