@@ -48,13 +48,23 @@ p {
     height: 7vh;
     box-shadow: 0px 0px 14px -3px var(--lightShadow);
     border-radius: var(--radius);
-    margin-bottom: 15px;
+
     padding-left: 10px;
 }
 
 .SearchInput:focus {
     outline: none;
     box-shadow: 0px 0px 14px -3px var(--dark);
+}
+
+.SearchTools {
+    display: flex;
+    align-items: center;
+    margin: 25px;
+}
+
+.SortPopulation {
+    margin: 10px;
 }
 
 .CountryGrid {
