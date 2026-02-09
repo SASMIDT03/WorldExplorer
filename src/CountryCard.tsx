@@ -1,7 +1,7 @@
 import "./CountryCard.css"
 import type { ExpandedCountry} from "./interface/ExpandedCountry.ts";
 import { motion } from "framer-motion"
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 type CountryCardProps = {
     name: string;
@@ -29,14 +29,6 @@ export function CountryCard({name, flag}: CountryCardProps) {
                 console.log("Data: ", data[0])
             })
     }
-
-    useEffect(() => {
-        if (!country) return
-        if (country.name.common.localeCompare("United States"))
-        console.log("c: ", country.capital[0])
-        console.log("p: ", country.population)
-
-    }, [country]);
 
     return (
         <div className={"CardContainer"}>
